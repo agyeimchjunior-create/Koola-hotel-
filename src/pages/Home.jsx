@@ -1,12 +1,12 @@
 import React from 'react'
-import Hero from '../assets/hero-video.mp4'
 import FeaturedDestination from '../components/FeaturedDestination'
 import Exclusive from '../components/Exclusive'
+import Hero from '../components/hero'
 
 const Home = () => {
   return (
     <>
-     <Hero /> 
+     <Hero/> 
      <FeaturedDestination />
      <Exclusive />
     </>
