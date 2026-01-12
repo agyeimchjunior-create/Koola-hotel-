@@ -1,5 +1,5 @@
 import React from 'react'
-import Hero from '../components/hero'
+import Hero from '../assets/hero-video.mp4'
 import FeaturedDestination from '../components/FeaturedDestination'
 import Exclusive from '../components/Exclusive'
 
