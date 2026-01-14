@@ -23,7 +23,7 @@ const Newsletter = () => {
 
         <input
           type="email"
-          className="bg-transparent outline-none px-4 py-3 sm:pl-5
+          className="bg-transparent outline-none px-4 py-3 
                      w-full text-sm text-white placeholder:text-slate-400"
           placeholder="Enter your email address"
         />
