@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 import { roomsDummyData, assets, facilityIcons } from '../assets/assets'
 import { useNavigate } from 'react-router-dom'
 
-const CheckBox = ({label, selected = false, onChange = () => {}}) => {
+const CheckBox = ({label,  onChange = () => {}}) => {
   return (
     <label className="flex gap-3 items-center cursor-pointer mt-2 text-sm">
-<input type="checkbox" checked={selected} onChange={(e)=>onChange(e.target.checked, label)}/>
+<input type="checkbox"  onChange={(e)=>onChange(e.target.checked, label)}/>
 <span className="font-light select-none">{label}</span>
     </label>
   )
@@ -14,7 +14,7 @@ const CheckBox = ({label, selected = false, onChange = () => {}}) => {
 const RadioButton = ({label, selected = false, onChange = () => {}}) => {
   return (
     <label className="flex gap-3 items-center cursor-pointer mt-2 text-sm">
-<input type="radio" name='sortOption' checked={selected} onChange={()=>onChange(label)}/>
+<input type="radio" name='sortOption'  onChange={()=>onChange(label)}/>
 <span className="font-light select-none">{label}</span>
     </label>
   )
@@ -25,6 +25,7 @@ const RadioButton = ({label, selected = false, onChange = () => {}}) => {
 const AllRooms = () => {
   const navigate = useNavigate()
   const [ openFilters, setOpenFilters ] = useState(false)
+  
 
   const roomTypes =[
     "Single bed",
@@ -48,6 +49,7 @@ const AllRooms = () => {
   const goToRoom = (id) => {
     navigate(`/rooms/${id}`)
     window.scrollTo(0, 0)
+
   }
 
   return (
