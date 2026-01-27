@@ -29,7 +29,7 @@ const HotelCard = ({room, index}) => {
       <p className="font-playfair text-xl font-medium text-gray-800">
         {room.hotel.name}
       </p>
-      <div className="flex items-center gap-1">
+      <div className="flex items-center gap-1 mt-3">
         <img src={assets.starIconFilled} alt="star" className="h-4 w-4" />4.5
       </div>
     </div>
@@ -45,7 +45,7 @@ const HotelCard = ({room, index}) => {
       </p>
       <button
         type="button"
-        className="bg-red-700 text-white px-3 py-2 rounded-tr-2xl hover:bg-red-400 
+        className="bg-red-700 text-white px-1 py-1 text-xs rounded-tr-2xl hover:bg-red-400 
                    transition duration-300 focus:outline-none focus:ring-2 focus:ring-red-500"
       >
         Book Now

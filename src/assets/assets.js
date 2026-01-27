@@ -80,191 +80,167 @@ export const assets = {
     testimonia3 
 }
 
-export const cities = [
-    "Dubai",
-    "Singapore",
-    "New York",
-    "London",
-];
+export const cities = ["Dubai", "Singapore", "New York", "London"]
 
-// Exclusive Offers Dummy Data
+// ---------------- Exclusive Offers ----------------
 export const exclusiveOffers = [
     { _id: 1, title: "Summer Escape Package", description: "Enjoy a complimentary night and daily breakfast", priceOff: 25, expiryDate: "Aug 31", image: exclusiveOfferCardImg1 },
     { _id: 2, title: "Romantic Getaway", description: "Special couples package including spa treatment", priceOff: 20, expiryDate: "Sep 20", image: exclusiveOfferCardImg2 },
     { _id: 3, title: "Luxury Retreat", description: "Book 60 days in advance and save on your stay at any of our luxury properties worldwide.", priceOff: 30, expiryDate: "Sep 25", image: exclusiveOfferCardImg3 },
 ]
 
-// Testimonials Dummy Data
+// ---------------- Testimonials ----------------
 export const testimonials = [
     { id: 1, name: "Emma Rodriguez", address: "Barcelona, Spain", image: testimonia1, rating: 5, review: "I've used many booking platforms before, but none compare to the personalized experience and attention to detail that QuickStay provides." },
     { id: 2, name: "Liam Johnson", address: "New York, USA", image: testimonia2, rating: 4, review: "QuickStay exceeded my expectations. The booking process was seamless, and the hotels were absolutely top-notch. Highly recommended!" },
     { id: 3, name: "Sophia Lee", address: "Seoul, South Korea", image: testimonia3, rating: 5, review: "Amazing service! I always find the best luxury accommodations through QuickStay. Their recommendations never disappoint!" }
-];
+]
 
-// Facility Icon
+// ---------------- Facility Icons ----------------
 export const facilityIcons = {
     "Free WiFi": assets.freeWifiIcon,
     "Free Breakfast": assets.freeBreakfastIcon,
     "Room Service": assets.roomServiceIcon,
     "Mountain View": assets.mountainIcon,
     "Pool Access": assets.poolIcon,
-};
+}
 
-// For Room Details Page
+// ---------------- Room Details Common Data ----------------
 export const roomCommonData = [
     { icon: assets.homeIcon, title: "Clean & Safe Stay", description: "A well-maintained and hygienic space just for you." },
     { icon: assets.badgeIcon, title: "Enhanced Cleaning", description: "This host follows Staybnb's strict cleaning standards." },
     { icon: assets.locationFilledIcon, title: "Excellent Location", description: "90% of guests rated the location 5 stars." },
     { icon: assets.heartIcon, title: "Smooth Check-In", description: "100% of guests gave check-in a 5-star rating." },
-];
+]
 
-// User Dummy Data
+// ---------------- User ----------------
 export const userDummyData = {
     "_id": "user_2unqyL4diJFP1E3pIBnasc7w8hP",
-    "username": "Great Stack",
-    "email": "user.greatstack@gmail.com",
+    "username": "Koola",
+    "email": "agyeimchjunior@gmail.com",
     "image": "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvdXBsb2FkZWQvaW1nXzJ2N2c5YVpSSEFVYVUxbmVYZ2JkSVVuWnFzWSJ9",
     "role": "hotelOwner",
     "createdAt": "2025-03-25T09:29:16.367Z",
     "updatedAt": "2025-04-10T06:34:48.719Z",
     "__v": 1,
-    "recentSearchedCities": [
-        "New York"
-    ]
+    "recentSearchedCities": ["New York"]
 }
 
-// Hotel Dummy Data
-export const hotelDummyData = {
-    "_id": "67f76393197ac559e4089b72",
-    "name": "Urbanza Suites",
-    "address": "Main Road  123 Street , 23 Colony",
-    "contact": "+0123456789",
-    "owner": userDummyData,
-    "city": "New York",
-    "createdAt": "2025-04-10T06:22:11.663Z",
-    "updatedAt": "2025-04-10T06:22:11.663Z",
-    "__v": 0
-}
+// ---------------- Hotels ----------------
+export const hotelNamesDummyData = [
+    "Grand Palace Hotel",
+    "Oceanview Resort",
+    "Mountain Retreat",
+    "City Lights Inn",
+]
 
-// Rooms Dummy Data
+export const hotelDummyDataArray = hotelNamesDummyData.map((name, index) => ({
+    _id: `hotel_${index + 1}`,
+    name: name,
+    address: `Address for ${name}`,
+    contact: `+012345678${index}`,
+    owner: userDummyData,
+    city: "Accra",
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+    __v: 0
+}))
+
+// ---------------- Guests ----------------
+export const guestNamesDummyData = [
+    { username: "Prudence ", email: "ama@example.com" },
+    { username: "Kingsley", email: "kojo@example.com" },
+    { username: "Michael", email: "abena@example.com" },
+    { username: "Judith", email: "kwame@example.com" },
+]
+
+export const guestUsersDummyData = guestNamesDummyData.map((guest, index) => ({
+    _id: `guest_${index + 1}`,
+    username: guest.username,
+    email: guest.email,
+    image: `https://i.pravatar.cc/150?img=${index + 10}`,
+    role: "guest",
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+    __v: 0
+}))
+
+// ---------------- Rooms ----------------
 export const roomsDummyData = [
     {
         "_id": "67f7647c197ac559e4089b96",
-        "hotel": hotelDummyData,
+        "hotel": hotelDummyDataArray[0],
         "roomType": "Double Bed",
         "pricePerNight": 399,
         "amenities": ["Room Service", "Mountain View", "Pool Access"],
         "images": [roomImg1, roomImg2, roomImg3, roomImg4],
         "isAvailable": true,
-        "createdAt": "2025-04-10T06:26:04.013Z",
-        "updatedAt": "2025-04-10T06:26:04.013Z",
+        "createdAt": new Date().toISOString(),
+        "updatedAt": new Date().toISOString(),
         "__v": 0
     },
     {
         "_id": "67f76452197ac559e4089b8e",
-        "hotel": hotelDummyData,
+        "hotel": hotelDummyDataArray[1],
         "roomType": "Double Bed",
         "pricePerNight": 299,
         "amenities": ["Room Service", "Mountain View", "Pool Access"],
         "images": [roomImg2, roomImg3, roomImg4, roomImg1],
         "isAvailable": true,
-        "createdAt": "2025-04-10T06:25:22.593Z",
-        "updatedAt": "2025-04-10T06:25:22.593Z",
+        "createdAt": new Date().toISOString(),
+        "updatedAt": new Date().toISOString(),
         "__v": 0
     },
     {
         "_id": "67f76406197ac559e4089b82",
-        "hotel": hotelDummyData,
+        "hotel": hotelDummyDataArray[2],
         "roomType": "Double Bed",
         "pricePerNight": 249,
         "amenities": ["Free WiFi", "Free Breakfast", "Room Service"],
         "images": [roomImg3, roomImg4, roomImg1, roomImg2],
         "isAvailable": true,
-        "createdAt": "2025-04-10T06:24:06.285Z",
-        "updatedAt": "2025-04-10T06:24:06.285Z",
+        "createdAt": new Date().toISOString(),
+        "updatedAt": new Date().toISOString(),
         "__v": 0
     },
     {
         "_id": "67f763d8197ac559e4089b7a",
-        "hotel": hotelDummyData,
+        "hotel": hotelDummyDataArray[3],
         "roomType": "Single Bed",
         "pricePerNight": 199,
         "amenities": ["Free WiFi", "Room Service", "Pool Access"],
         "images": [roomImg4, roomImg1, roomImg2, roomImg3],
         "isAvailable": true,
-        "createdAt": "2025-04-10T06:23:20.252Z",
-        "updatedAt": "2025-04-10T06:23:20.252Z",
+        "createdAt": new Date().toISOString(),
+        "updatedAt": new Date().toISOString(),
         "__v": 0
     }
 ]
 
-
-
-// User Bookings Dummy Data
-export const userBookingsDummyData = [
-    {
-        "_id": "67f76839994a731e97d3b8ce",
-        "user": userDummyData,
-        "room": roomsDummyData[1],
-        "hotel": hotelDummyData,
-        "checkInDate": "2025-04-30T00:00:00.000Z",
-        "checkOutDate": "2025-05-01T00:00:00.000Z",
-        "totalPrice": 299,
-        "guests": 1,
-        "status": "pending",
-        "paymentMethod": "Stripe",
-        "isPaid": true,
-        "createdAt": "2025-04-10T06:42:01.529Z",
-        "updatedAt": "2025-04-10T06:43:54.520Z",
-        "__v": 0
-    },
-    {
-        "_id": "67f76829994a731e97d3b8c3",
-        "user": userDummyData,
-        "room": roomsDummyData[0],
-        "hotel": hotelDummyData,
-        "checkInDate": "2025-04-27T00:00:00.000Z",
-        "checkOutDate": "2025-04-28T00:00:00.000Z",
-        "totalPrice": 399,
-        "guests": 1,
-        "status": "pending",
-        "paymentMethod": "Pay At Hotel",
-        "isPaid": false,
-        "createdAt": "2025-04-10T06:41:45.873Z",
-        "updatedAt": "2025-04-10T06:41:45.873Z",
-        "__v": 0
-    },
-    {
-        "_id": "67f76810994a731e97d3b8b4",
-        "user": userDummyData,
-        "room": roomsDummyData[3],
-        "hotel": hotelDummyData,
-        "checkInDate": "2025-04-11T00:00:00.000Z",
-        "checkOutDate": "2025-04-12T00:00:00.000Z",
-        "totalPrice": 199,
-        "guests": 1,
-        "status": "pending",
-        "paymentMethod": "Pay At Hotel",
-        "isPaid": false,
-        "createdAt": "2025-04-10T06:41:20.501Z",
-        "updatedAt": "2025-04-10T06:41:20.501Z",
-        "__v": 0
+// ---------------- User Bookings ----------------
+export const userBookingsDummyData = roomsDummyData.map((room, index) => {
+    const guest = guestUsersDummyData[index % guestUsersDummyData.length];
+    return {
+        _id: `booking_${index + 1}`,
+        user: guest,
+        room: room,
+        hotel: room.hotel,
+        checkInDate: new Date().toISOString(),
+        checkOutDate: new Date(new Date().getTime() + 24*60*60*1000).toISOString(),
+        totalPrice: room.pricePerNight,
+        guests: 1,
+        status: "pending",
+        paymentMethod: index % 2 === 0 ? "Stripe" : "Pay At Hotel",
+        isPaid: index % 2 === 0,
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString(),
+        __v: 0
     }
-]
+})
 
-// Dashboard Dummy Data
+// ---------------- Dashboard ----------------
 export const dashboardDummyData = {
-    "totalBookings": 3,
-    "totalRevenue": 897,
-    "bookings": userBookingsDummyData
+    totalBookings: userBookingsDummyData.length,
+    totalRevenue: userBookingsDummyData.reduce((sum, b) => sum + b.totalPrice, 0),
+    bookings: userBookingsDummyData
 }
-
-// --------- SVG code for Book Icon------
-/* 
-const BookIcon = ()=>(
-    <svg className="w-4 h-4 text-gray-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" >
-    <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 19V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v13H7a2 2 0 0 0-2 2Zm0 0a2 2 0 0 0 2 2h12M9 3v14m7 0v4" />
-</svg>
-)
-
-*/
