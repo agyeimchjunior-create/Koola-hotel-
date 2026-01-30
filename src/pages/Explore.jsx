@@ -1,6 +1,6 @@
 import React from "react";
 import { assets, exploreDummyData } from "../assets/assets";
-import exploreBackground from "../assets/explore-bg.jpg";
+import exploreBackground from "../assets/explore-bg.webp";
 import { useNavigate } from "react-router-dom";
 
 export const Explore = () => {
